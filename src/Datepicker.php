@@ -9,16 +9,16 @@ use Lunar\Exceptions\FieldTypeException;
 class Datepicker implements FieldType
 {
     /**
-     * @var array<string>
+     * @var string
      */
-    protected array $value = [];
+    protected string $value = '';
 
     /**
      * Create a new instance of Datepicker field type.
      *
-     * @param string|array|null $value
+     * @param string|null $value
      */
-    public function __construct(array|string|null $value = [])
+    public function __construct(string|null $value = '')
     {
         $this->setValue($value);
     }
@@ -36,9 +36,9 @@ class Datepicker implements FieldType
     /**
      * Return the value of this field.
      *
-     * @return array<string>
+     * @return string
      */
-    public function getValue(): array
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -46,11 +46,11 @@ class Datepicker implements FieldType
     /**
      * Set the value of this field.
      *
-     * @param string|array $value
+     * @param string $value
      *
      * @return void
      */
-    public function setValue(...$value): void
+    public function setValue($value): void
     {
         $this->value = $value;
     }
