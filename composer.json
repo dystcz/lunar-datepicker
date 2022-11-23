@@ -1,0 +1,58 @@
+{
+    "name": "dystcz/lunar-datepicker",
+    "description": "Datepicker field type for lunar ecommerce package",
+    "keywords": [
+        "dystcz",
+        "lunar",
+        "datepicker",
+        "field",
+        "field-type"
+    ],
+    "homepage": "https://github.com/dystcz/lunar-datepicker",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jakub Theimer",
+            "email": "jakub@dy.st",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "lunarphp/lunar": "^0.1",
+        "illuminate/support": "^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dystcz\\LunarDatepicker\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dystcz\\LunarDatepicker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dystcz\\LunarDatepicker\\LunarDatepickerServiceProvider"
+            ],
+            "aliases": {
+                "LunarDatepicker": "Dystcz\\LunarDatepicker\\LunarDatepickerFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
