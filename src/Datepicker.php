@@ -11,14 +11,14 @@ class Datepicker implements FieldType
     /**
      * @var string
      */
-    protected string $value = '';
+    protected string|null $value = null;
 
     /**
      * Create a new instance of Datepicker field type.
      *
      * @param string|null $value
      */
-    public function __construct(string|null $value = '')
+    public function __construct(string|null $value = null)
     {
         $this->setValue($value);
     }
@@ -36,9 +36,9 @@ class Datepicker implements FieldType
     /**
      * Return the value of this field.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue(): string
+    public function getValue(): string|null
     {
         return $this->value;
     }
